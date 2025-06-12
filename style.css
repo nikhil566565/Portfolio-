@@ -1,0 +1,272 @@
+:root {
+  --primary: #00f0ff;
+  --secondary: #8a2be2;
+  --dark: #0a0a12;
+  --darker: #050508;
+  --neon-pink: #ff00ff;
+  --neon-blue: #00f0ff;
+}
+* {
+  cursor: none !important;
+}
+body {
+  cursor: none !important;
+  font-family: "Rajdhani", "Courier New", monospace;
+  background-color: var(--darker);
+  color: #e0e0ff;
+  overflow-x: hidden;
+}
+
+.cyber-font {
+  font-family: "Orbitron", sans-serif;
+}
+
+.glow-text {
+  text-shadow: 0 0 8px var(--primary);
+}
+
+.glow-box {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.neon-border {
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);
+}
+
+.glass-panel {
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+}
+
+.tech-icon {
+  filter: drop-shadow(0 0 8px var(--primary));
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px var(--primary));
+}
+
+.holographic-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 240, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid var(--primary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary);
+  }
+}
+
+.grid-overlay {
+  background-image: linear-gradient(
+      rgba(0, 240, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Cursor Styleing */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 27px;
+  height: 27px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Linkdin Popup Styles */
+.Poppup-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(7px);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.Poppup-hidden {
+  display: none;
+}
+
+.Poppup-popup-content {
+  background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
+  color: #fff;
+  border: 2px solid #2ff8f6;
+  border-radius: 12px;
+  text-align: center;
+  align-content: center;
+  padding: 2rem;
+  width: 320px;
+  font-size: 15px;
+  font-family: "Orbitron", sans-serif;
+  /* font-family: "Rajdhani", "Courier New", monospace; */
+  position: relative;
+  box-shadow: 0 0 20px #00f7ff, 0 0 7px #00f7ff80;
+}
+
+.Poppup-linkedin-icon {
+  width: 30px;
+  margin-bottom: 10px;
+}
+
+.Poppup-follow-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #1fffc7, #826eff);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  box-shadow: 0 0 10px #2ff8f6;
+  transition: 0.3s;
+}
+
+.Poppup-follow-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #2ff8f6;
+}
+
+.Poppup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.Poppup-closing-text {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Message Toast */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  right: 30px;
+  bottom: 30px;
+  font-size: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Other Links */
+.other-link-item {
+  transition: all 0.3s ease;
+}
+
+.other-link-item:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateX(2px);
+}
+.other-external-icon {
+  transition: all 0.3s ease;
+}
+
+.other-link-item:hover .other-external-icon {
+  transform: translate(1px, -1px);
+}
